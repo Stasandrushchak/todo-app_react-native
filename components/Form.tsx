@@ -1,4 +1,4 @@
-import { StatusBar } from "expo-status-bar";
+import React from "react";
 import { useState } from "react";
 import {
   StyleSheet,
@@ -7,11 +7,11 @@ import {
 } from "react-native";
 import { View } from "react-native-web";
 
-export default function Form({ onSubmit }) {
-  const [inputValue, setInputValue] = useState("");
+export default function Form({ addTodo }) {
+  const [title, setTitle] = useState('');
 
-  const onChange = (inputValue) => {
-    setInputValue(inputValue);
+  const onChange = (title) => {
+    setTitle(title);
   };
 
   return (
@@ -23,7 +23,7 @@ export default function Form({ onSubmit }) {
       />
       <View style={styles.button}>
       <Button
-          onPress={() => onSubmit(inputValue)} title='Add todo' />
+          onPress={() => addTodo(title)} title='Add todo' />
         </View>
     </View>
   );

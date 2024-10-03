@@ -1,9 +1,10 @@
+import React from "react";
 import { StyleSheet, TouchableHighlight, Text } from "react-native";
 
 export default function ListItem({ el, handleDelete }) {
   return (
     <TouchableHighlight onPress={() => handleDelete(el.id)}>
-      <Text style={styles.text}>{el.text}</Text>
+      <Text style={styles.text}>{el.title}</Text>
     </TouchableHighlight>
   );
 }
